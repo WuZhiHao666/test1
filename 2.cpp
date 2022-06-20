@@ -1,22 +1,376 @@
-#include<iostream>
-using namespace std;
-int main()
-{
-	float a,b,result;
-	char c;
-	cout<<"ÇëÊäÈëÒ»¸öËÄÔòÔËËãÊ½£º";
-	cin>>a>>c>>b; 
-	switch(c)
-	{
-		case'+':result=a+b;break;
-		case'-':result=a-b;break;
-		case'*':result=a*b;break;
-		case'/':
-		if(b==0)
-		cout<<"³ıÊ½·ÖÄ¸ÎªÁã";
-		result=a/b;break;
-		default :cout<<"·ÇËÄÔòÔËËãÊ½";break; 
-	 }
-	 cout<<"½á¹ûÎª£º"<<result<<endl;
-	 return 0;
+#include <stdio.h>
+#include <stdlib.h>
+float operato(int a,int b,char d){
+float add;
+int c;
+c=rand()%100+1;
+int x;
+x=rand()%4;
+if(d=='+'){
+	switch(x){
+	case 0:
+	add=a+b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a+b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a+b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a+b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='-'){
+    switch(x){
+	case 0:
+	add=a-b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a-b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a-b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a-b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='*'){
+    switch(x){
+	case 0:
+	add=a*b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a*b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a*b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a*b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='/'){
+    switch(x){
+	case 0:
+	add=a/b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a/b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a/b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a/b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+return 0;
+}
+int main(){
+printf("è¯·è¾“å…¥é¢˜ç›®ä¸ªæ•°:");
+int i,times=0;
+srand(100);
+scanf("%d",&i);
+do{
+	int x,a,b;
+	float add;
+	char d;
+	x=rand()%4;
+	a=rand()%100+1;
+	switch(x){
+	   case 0:d='+';
+	   break;
+	   case 1:d='-';
+	   break;
+	   case 2:d='*';
+	   break;
+	   case 3:d='/';
+	   break;
+	}
+	b=rand()%100+1;
+	add=operato(a,b,d);
+	if(add<0){
+        i++;
+        
+        continue;
+	}
+	 printf("ç­”æ¡ˆ:%.2f\n",add);  
+	 times++;
+}while(times<i);
+printf("é¢˜ç›®æ•°:%d",times);
+return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+float operato(int a,int b,char d){
+float add;
+int c;
+c=rand()%100+1;
+int x;
+x=rand()%4;
+if(d=='+'){
+	switch(x){
+	case 0:
+	add=a+b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a+b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a+b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a+b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='-'){
+    switch(x){
+	case 0:
+	add=a-b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a-b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a-b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a-b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='*'){
+    switch(x){
+	case 0:
+	add=a*b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a*b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a*b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a*b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+if(d='/'){
+    switch(x){
+	case 0:
+	add=a/b+c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d+%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 1:
+	add=a/b-c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d-%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 2:
+	add=a/b*c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d*%d=\n",a,d,b,c);
+	return(add);
+	break;
+	case 3:
+	add=a/b/c;
+	if(add<0){
+		break;
+	}
+	printf("%d%c%d/%d=\n",a,d,b,c);
+	return(add);
+	break;
+	}
+}
+return 0;
+}
+int main(){
+printf("è¯·è¾“å…¥é¢˜ç›®ä¸ªæ•°:");
+int i,times=0;
+srand(100);
+scanf("%d",&i);
+do{
+	int x,a,b;
+	float add;
+	char d;
+	x=rand()%4;
+	a=rand()%100+1;
+	switch(x){
+	   case 0:d='+';
+	   break;
+	   case 1:d='-';
+	   break;
+	   case 2:d='*';
+	   break;
+	   case 3:d='/';
+	   break;
+	}
+	b=rand()%100+1;
+	add=operato(a,b,d);
+	if(add<0){
+        i++;
+        
+        continue;
+	}
+	 printf("ç­”æ¡ˆ:%.2f\n",add);  
+	 times++;
+}while(times<i);
+printf("é¢˜ç›®æ•°:%d",times);
+return 0;
 }
